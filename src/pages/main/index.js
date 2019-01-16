@@ -1,5 +1,19 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import { Container, Form, Input, SubmitButton } from './styles';
 
-const Main = () => <h1>Main</h1>;
+class Main extends Component {
+    render () {
+        return (
+            <Fragment>
+                <Container>
+                    <Form onSubmit={this.handleAddRepository}>
+                        <Input placeholder="user / repository" />
+                        <SubmitButton>Enviar</SubmitButton>
+                    </Form>
+                </Container>
+            </Fragment>
+        );
+    }
+}
 
 export default Main;

@@ -33,7 +33,7 @@ export const SubmitButton = styled.button`
 
 export const HeaderMsg = styled.h3`
     font-size: 1.5rem;
-    margin: 30px 0 30px -300px;
+    margin: 30px 0;
     
     span {
         color: ${primary};

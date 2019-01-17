@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Form, Input, SubmitButton, HeaderMsg, RepositoryList, Repository } from './styles';
+import { Container, Form, Input, SubmitButton, HeaderMsg, RepositoryList, Repository, Error } from './styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Animated } from 'react-animated-css';
@@ -49,6 +49,9 @@ class Main extends Component {
                         <SubmitButton>Submit</SubmitButton>
                     </Form>
                     </Animated>
+                    
+                    { !!this.props.favorites.error && <Error>{this.props.favorites.error}</Error> }
+                    
                     <HeaderMsg>
                         You added <span>{this.props.count}</span> {this.props.count === 1 ? 'favorite' : 'favorites'}!
                     </HeaderMsg>

@@ -10,6 +10,8 @@ export function* addFavorite (action) {
         name: data.full_name,
         description: data.description,
         url: data.html_url,
+        stars: data.stargazers_count,
+        avatar: data.owner.avatar_url
     };
     
     yield put(addFavoriteSuccess(repositoryData));

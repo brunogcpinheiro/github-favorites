@@ -28,6 +28,7 @@ export const SubmitButton = styled.button`
     padding: 10px 20px;
     border: none;
     font-size: 1.5rem;
+    text-transform: uppercase;
 `;
 
 export const HeaderMsg = styled.h3`
@@ -46,19 +47,31 @@ export const RepositoryList = styled.ul`
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 10px;
+`;
+
+export const Repository = styled.li`
+    -webkit-box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
+    -moz-box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
+    box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
+    padding: 20px;
+    margin: 10px;
+    width: 350px;
+    height: 200px;
+    float: left;
+    background: ${secondary};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
-    li {
-        -webkit-box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
-        -moz-box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
-        box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
-        padding: 20px;
-        margin: 10px;
-        width: 350px;
-        float: left;
-        background: ${secondary};
+    div {
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+        
+        img {
+            width: 50px;
+            height: 50px;
+        }
         
         h2 {
             font-size: 1.7rem;
@@ -66,17 +79,24 @@ export const RepositoryList = styled.ul`
         }
         
         p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
         }
-        
-        a {
-            color: #181818;
-            background: ${primary};
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
+    }
+    
+    p {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    
+    a {
+        color: #181818;
+        background: ${primary};
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
     }
 `;

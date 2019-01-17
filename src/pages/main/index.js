@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Form, Input, SubmitButton, HeaderMsg, RepositoryList } from './styles';
+import { Container, Form, Input, SubmitButton, HeaderMsg, RepositoryList, Repository } from './styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Animated } from 'react-animated-css';
+import { TiStarFullOutline } from 'react-icons/ti';
 import * as FavoritesActions from '../../store/actions/favorites';
 import Loading from '../../components/loading';
 import { secondary } from '../../utils/colors';
@@ -37,6 +39,7 @@ class Main extends Component {
         return (
             <Fragment>
                 <Container>
+                    <Animated animationIn="bounceInLeft" isVisible={true}>
                     <Form onSubmit={this.handleAddRepository}>
                         <Input
                             placeholder="user / repository" 
@@ -45,17 +48,28 @@ class Main extends Component {
                         />
                         <SubmitButton>Submit</SubmitButton>
                     </Form>
+                    </Animated>
                     <HeaderMsg>
-                        You have <span>{this.props.count}</span> {this.props.count === 1 ? 'favorite' : 'favorites'}!
+                        You added <span>{this.props.count}</span> {this.props.count === 1 ? 'favorite' : 'favorites'}!
                     </HeaderMsg>
+                    
                     { this.props.favorites.loading && <Loading type={'bars'} color={secondary} /> }
+                    
                     <RepositoryList>
                         { this.props.favorites.data.map(favorite => (
-                            <li key={favorite.id}>
-                                <h2>{favorite.name}</h2>
-                                <p>{favorite.description}</p>
-                                <a href={favorite.url} target="blank">Link to Repository</a>
-                            </li>
+                            <Animated animationIn="fadeInRight" isVisible={true} key={favorite.id}>
+                                <Repository>
+                                    <div>
+                                        <img src={favorite.avatar} alt={favorite.name} />
+                                        <h2>{favorite.name}</h2>
+                                        <p>
+                                            <TiStarFullOutline style={{fontSize: '2rem', color: '#f6e58d'}} />{favorite.stars}
+                                        </p>
+                                    </div>
+                                    <p>{favorite.description}</p>
+                                    <a href={favorite.url} target="blank">Open this Repository</a>
+                                </Repository>
+                            </Animated>
                         )) }
                     </RepositoryList>
                 </Container>

@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 10px;
   }
   
+  body {
+        background: #f5f5f5;
+  }
+  
   button, a {
         cursor: pointer;
   }

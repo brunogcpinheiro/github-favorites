@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primary } from '../../utils/colors';
+import { primary, secondary } from '../../utils/colors';
 
 export const Container = styled.div`
    margin-top: 30px;
@@ -32,7 +32,7 @@ export const SubmitButton = styled.button`
 
 export const HeaderMsg = styled.h3`
     font-size: 1.5rem;
-    margin: 15px 0 0 -300px;
+    margin: 30px 0 30px -300px;
     
     span {
         color: ${primary};
@@ -48,13 +48,17 @@ export const RepositoryList = styled.ul`
     margin-top: 10px;
     
     li {
-        -webkit-box-shadow: 6px 6px 12px 0px rgba(217,217,217,1);
-        -moz-box-shadow: 6px 6px 12px 0px rgba(217,217,217,1);
-        box-shadow: 6px 6px 12px 0px rgba(217,217,217,1);
+        -webkit-box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
+        -moz-box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
+        box-shadow: 6px 6px 12px 0px rgba(199,199,199,1);
         padding: 20px;
         margin: 10px;
         width: 350px;
         float: left;
+        background: ${secondary};
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         
         h2 {
             font-size: 1.7rem;
@@ -67,11 +71,12 @@ export const RepositoryList = styled.ul`
         }
         
         a {
-            color: #fff;
+            color: #181818;
             background: ${primary};
             padding: 10px 20px;
             text-decoration: none;
             font-size: 1.4rem;
+            font-weight: bold;
         }
     }
 `;

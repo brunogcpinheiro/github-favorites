@@ -2,12 +2,15 @@ import styled from 'styled-components';
 import { primary } from '../../utils/colors';
 
 export const Container = styled.div`
-    max-width: 500px;
-    margin: 30px auto;
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 `;
 
 export const Form = styled.form`
     display: flex;
+    width: 500px;
 `;
 
 export const Input = styled.input`
@@ -29,7 +32,7 @@ export const SubmitButton = styled.button`
 
 export const HeaderMsg = styled.h3`
     font-size: 1.5rem;
-    margin: 20px;
+    margin: 15px 0 0 -300px;
     
     span {
         color: ${primary};
@@ -40,7 +43,9 @@ export const HeaderMsg = styled.h3`
 export const RepositoryList = styled.ul`
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
     
     li {
         -webkit-box-shadow: 6px 6px 12px 0px rgba(217,217,217,1);
@@ -48,6 +53,8 @@ export const RepositoryList = styled.ul`
         box-shadow: 6px 6px 12px 0px rgba(217,217,217,1);
         padding: 20px;
         margin: 10px;
+        width: 350px;
+        float: left;
         
         h2 {
             font-size: 1.7rem;

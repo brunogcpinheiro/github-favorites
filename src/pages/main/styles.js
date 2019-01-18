@@ -103,6 +103,8 @@ export const Repository = styled.li`
 
 export const Error = styled.h1`
     font-size: 2rem;
-    color: #eb2f06;
-    margint-top: 15px;
+    color: #fff;
+    margin-top: 15px;
+    padding: 5px 10px;
+    background: #eb2f06;
 `;

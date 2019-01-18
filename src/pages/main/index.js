@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Animated } from 'react-animated-css';
 import { TiStarFullOutline } from 'react-icons/ti';
-import * as FavoritesActions from '../../store/actions/favorites';
+import { Creators as FavoriteActions } from '../../store/ducks/favorites';
 import Loading from '../../components/loading';
 import { secondary } from '../../utils/colors';
 
@@ -87,6 +87,6 @@ const mapStateToProps = state => ({
     count: state.favorites.data.length,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(FavoritesActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(FavoriteActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
